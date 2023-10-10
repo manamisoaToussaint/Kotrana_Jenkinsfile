@@ -1,23 +1,23 @@
 pipeline {
     agent any
-    environment {
-        RELEASE='20.04'
-    }
 
     stages {
-        stage('Build') {
-            agent any
-            environment {
-                LOG_LEVEL='INFO'
-            }
+        stage('init') {
             steps {
-                echo "Building release ${RELEASE} with log level ${LOG_LEVEL} ..."
+                echo "Hi, this is Toussaint"
+                echo "hano tay!!"
             }
         }
 
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo "Testing. I can see release ${RELEASE}, but not log level ${LOG_LEVEL}"
+                echo "Starting build with maven"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying in staging Area"
             }
         }
     }
