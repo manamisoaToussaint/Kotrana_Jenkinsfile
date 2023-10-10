@@ -20,5 +20,11 @@ pipeline {
                 echo "Deploying in staging Area"
             }
         }
+
+        stage('TAY') {
+            steps {
+                echo "Deploying TAY in PROD"
+            }
+        }
     }
 }
